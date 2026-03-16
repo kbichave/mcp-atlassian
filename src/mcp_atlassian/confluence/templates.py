@@ -71,9 +71,7 @@ class TemplatesMixin(ConfluenceClient):
             raise
         except Exception as e:
             logger.error(f"Error fetching template {template_id}: {str(e)}")
-            raise Exception(
-                f"Failed to get template {template_id}: {str(e)}"
-            ) from e
+            raise Exception(f"Failed to get template {template_id}: {str(e)}") from e
 
     @handle_auth_errors("Confluence API")
     def create_page_from_template(
@@ -130,9 +128,7 @@ class TemplatesMixin(ConfluenceClient):
         except HTTPError:
             raise
         except Exception as e:
-            logger.error(
-                f"Error creating page from template {template_id}: {str(e)}"
-            )
+            logger.error(f"Error creating page from template {template_id}: {str(e)}")
             raise Exception(
                 f"Failed to create page from template {template_id}: {str(e)}"
             ) from e

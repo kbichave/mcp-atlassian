@@ -102,9 +102,7 @@ class TestListPageTemplates:
 class TestGetPageTemplate:
     def test_returns_template_with_body(self, templates_mixin):
         """get_page_template returns the full template dict including body."""
-        templates_mixin.confluence.get_content_template.return_value = (
-            _TEMPLATE_SUMMARY
-        )
+        templates_mixin.confluence.get_content_template.return_value = _TEMPLATE_SUMMARY
 
         result = templates_mixin.get_page_template("tpl-001")
 
@@ -132,9 +130,7 @@ class TestGetPageTemplate:
 class TestCreatePageFromTemplate:
     def test_creates_page_with_template_body(self, templates_mixin):
         """create_page_from_template fetches template then calls create_page."""
-        templates_mixin.confluence.get_content_template.return_value = (
-            _TEMPLATE_SUMMARY
-        )
+        templates_mixin.confluence.get_content_template.return_value = _TEMPLATE_SUMMARY
         templates_mixin.confluence.create_page = MagicMock(
             return_value={"id": "999", "title": "My Meeting Notes"}
         )
@@ -160,9 +156,7 @@ class TestCreatePageFromTemplate:
 
     def test_passes_parent_id(self, templates_mixin):
         """create_page_from_template forwards parent_id to create_page."""
-        templates_mixin.confluence.get_content_template.return_value = (
-            _TEMPLATE_SUMMARY
-        )
+        templates_mixin.confluence.get_content_template.return_value = _TEMPLATE_SUMMARY
         templates_mixin.confluence.create_page = MagicMock(
             return_value={"id": "888", "title": "Child Page"}
         )
@@ -179,9 +173,7 @@ class TestCreatePageFromTemplate:
 
     def test_url_built_from_config(self, templates_mixin):
         """create_page_from_template constructs the page URL from config.url."""
-        templates_mixin.confluence.get_content_template.return_value = (
-            _TEMPLATE_SUMMARY
-        )
+        templates_mixin.confluence.get_content_template.return_value = _TEMPLATE_SUMMARY
         templates_mixin.confluence.create_page = MagicMock(
             return_value={"id": "123", "title": "Test"}
         )
