@@ -11,6 +11,7 @@ from .config import ConfluenceConfig
 from .labels import LabelsMixin
 from .pages import PagesMixin
 from .properties import PropertiesMixin
+from .restrictions import RestrictionsMixin
 from .search import SearchMixin
 from .spaces import SpacesMixin
 from .users import UsersMixin
@@ -26,6 +27,7 @@ class ConfluenceFetcher(
     AnalyticsMixin,
     AttachmentsMixin,
     PropertiesMixin,
+    RestrictionsMixin,
 ):
     """Main entry point for Confluence operations, providing backward compatibility.
 
@@ -42,6 +44,7 @@ class ConfluenceFetcher(
     - AnalyticsMixin: Page view analytics (Cloud only)
     - AttachmentsMixin: Attachment operations
     - PropertiesMixin: Content property operations
+    - RestrictionsMixin: Page restriction operations
     """
 
     pass
