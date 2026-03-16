@@ -14,6 +14,7 @@ from .properties import PropertiesMixin
 from .restrictions import RestrictionsMixin
 from .search import SearchMixin
 from .spaces import SpacesMixin
+from .templates import TemplatesMixin
 from .users import UsersMixin
 
 
@@ -28,6 +29,7 @@ class ConfluenceFetcher(
     AttachmentsMixin,
     PropertiesMixin,
     RestrictionsMixin,
+    TemplatesMixin,
 ):
     """Main entry point for Confluence operations, providing backward compatibility.
 
@@ -45,6 +47,7 @@ class ConfluenceFetcher(
     - AttachmentsMixin: Attachment operations
     - PropertiesMixin: Content property operations
     - RestrictionsMixin: Page restriction operations
+    - TemplatesMixin: Template operations
     """
 
     pass
